@@ -6,5 +6,8 @@ SELECT Track ,MAX(Purchases) as TopTrack FROM
 FROM InvoiceLine i 
 JOIN Track t 
 ON i.TrackId = t.TrackId
+JOIN Invoice 
+ON Invoice.InvoiceId = i.InvoiceId
+WHERE Invoice.InvoiceDate LIKE '2013%'
 GROUP BY i.TrackId
 ORDER BY Purchases )
