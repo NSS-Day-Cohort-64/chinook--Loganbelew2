@@ -7,5 +7,6 @@ JOIN Invoice i
 ON c.CustomerId = i.CustomerId
 JOIN Employee e 
 ON e.EmployeeId = c.SupportRepId
+WHERE i.InvoiceDate LIKE '2009%'
 GROUP BY SalesRep
 )
